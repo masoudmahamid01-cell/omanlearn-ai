@@ -402,18 +402,13 @@ footer strong{color:#fff}
 <!-- COUNTER + CTA -->
 <div class="counter-section">
   <div class="sec-tag gold">إحصائيات المنصة</div>
-  <h2 class="sec-h" style="margin-top:8px">عداد الزيارات والمستفيدين</h2>
-  <p style="color:var(--muted);font-family:'Tajawal',sans-serif;margin-top:6px">يتحدّث تلقائياً مع كل زيارة جديدة</p>
-  <div class="counters-row">
+  <h2 class="sec-h" style="margin-top:8px">عدد الزيارات</h2>
+  <div class="counters-row" style="grid-template-columns:1fr;max-width:300px">
     <div class="cnt-box main">
+      <div style="font-size:2.2rem;margin-bottom:8px">📊</div>
       <div class="cnt-num" id="visit-count">٠</div>
-      <div class="cnt-lbl">🏅 إجمالي الزيارات</div>
+      <div class="cnt-lbl">عدد الزيارات</div>
     </div>
-    <div class="cnt-box">
-      <div class="cnt-num" id="ben-count">٠</div>
-      <div class="cnt-lbl">👥 المستفيدون المُقدَّرون</div>
-    </div>
-
   </div>
 
 </div>
@@ -427,14 +422,13 @@ footer strong{color:#fff}
 <div class="toast" id="toast">تم تسجيل زيارتك بنجاح ✓</div>
 
 <script>
-const PLATFORM_URL='https://teams.microsoft.com/l/app/?source=app-header-share-entrypoint&titleId=T_7354f7de-7c78-c9a2-5249-2b35635d00d9';
+const PLATFORM_URL='https://teams.microsoft.com/l/chat/19:897981db-1b08-4830-885e-0e9ad908ed71_bd0b8c5f-ebb2-4dc6-9f97-baa32efb6dc1@unq.gbl.spaces/conversations?context=%7B%22contextType%22%3A%22chat%22%7D';
 const STORAGE_KEY='omanlearn_v2_visits';
 
 function toAr(n){return n.toString().replace(/\d/g,d=>'٠١٢٣٤٥٦٧٨٩'[d])}
 
 function updateCounters(n){
   document.getElementById('visit-count').textContent=toAr(n.toLocaleString());
-  document.getElementById('ben-count').textContent=toAr(Math.round(n*3.2).toLocaleString());
 }
 
 function showToast(){
